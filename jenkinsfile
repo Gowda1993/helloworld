@@ -4,7 +4,7 @@ pipeline {
     stage ('checkout') {
       steps {
        sh 'rm -rf hello-world-war'
-       sh 'git clone https://github.com/gshashi1408/hello-world-war.git'
+       sh 'git clone https://github.com/Gowda1993/helloworld.git'
       }
     }
     stage ('build') {
@@ -14,7 +14,7 @@ pipeline {
 }
     stage('deploy') {
       steps {
-      sh 'scp /home/slave2/workspace/Helloworld/target/hello-world-war-1.0.0.war root@172.31.37.35:/root/apache-tomcat-8.5.98/webapps/'
+      sh 'cp /home/slave2/workspace/helloworld/target/hello-world-war-1.0.0.war /root/apache-tomcat-8.5.98/webapps/'
   }
 }
   }
