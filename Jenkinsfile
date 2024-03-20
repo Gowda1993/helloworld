@@ -38,7 +38,7 @@ pipeline {
                                 sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
                                 sh "docker pull shashidhar09/myjenkinsprivate:${BUILD_NUMBER}"
                                 sh 'docker rm -f tomcat-qa || true'
-                                sh 'docker run -d -p 5555:8080 --name tomcat-qa shashidhar09/myjenkinsprivate:${BUILD_NUMBER}'
+                                sh 'docker run -d -p 8080:8080 --name tomcat-qa shashidhar09/myjenkinsprivate:${BUILD_NUMBER}'
                             }
                         }
                     }
@@ -51,7 +51,7 @@ pipeline {
                                 sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
                                 sh "docker pull shashidhar09/myjenkinsprivate:${BUILD_NUMBER}"
                                 sh 'docker rm -f tomcat-prod || true'
-                                sh 'docker run -d -p 5555:8080 --name tomcat-prod shashidhar09/myjenkinsprivate:${BUILD_NUMBER}'
+                                sh 'docker run -d -p 8080:8080 --name tomcat-prod shashidhar09/myjenkinsprivate:${BUILD_NUMBER}'
                             }
                         }
                     }
