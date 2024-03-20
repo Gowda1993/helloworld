@@ -44,7 +44,7 @@ pipeline {
                     }
                 }
                 stage('deployProd') {
-                    agent { label 'slave2' }
+                    agent { label 'Slave2' }
                     steps {
                         script {
                             withCredentials([usernamePassword(credentialsId: '0c0af0dc-2acb-4f30-be59-5a66d40cb34f', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
