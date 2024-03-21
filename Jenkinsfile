@@ -13,7 +13,7 @@ pipeline {
         dir("helloworld")
         {
           sh 'echo "inside dir"'
-          sh 'docker build -t tomcat-war:1.0'
+          sh 'docker build -t tomcat-war:1.0 .'
         }
   }
 }
