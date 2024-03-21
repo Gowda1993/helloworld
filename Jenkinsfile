@@ -20,7 +20,7 @@ pipeline {
     stage('deploy') {
       steps {
        sh 'docker rm -f tomcat-war'
-        sh 'docker run -d -p 8080:8080 --name tomcat-war tomcat-war:1.0'
+        sh 'docker run -d -p 8090:8080 --name tomcat-war tomcat-war:1.0'
 
  }
 }
