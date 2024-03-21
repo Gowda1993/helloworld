@@ -4,7 +4,7 @@ pipeline {
     stage ('checkout') {
       steps {
         sh 'rm -rf helloworld'
-       sh 'https://github.com/Gowda1993/helloworld.git'
+       sh 'git clone https://github.com/Gowda1993/helloworld.git'
       }
     }
     stage ('build') {
